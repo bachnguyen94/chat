@@ -14,3 +14,12 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->group(['prefix' => 'api'], function() use ($router) {
+    $router->get('/', function () use ($router) {
+        return 'This is api page.';
+    });
+
+    $router->group(['prefix' => 'schedule_time'], function() use ($router) {
+        $router->get('/', 'ScheduleTimeController@index');
+    });
+});

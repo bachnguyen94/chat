@@ -7,9 +7,12 @@
  */
 
 namespace App\Http\Middleware;
-
+use Closure;
 
 class Acl
 {
-
+    public function handle($request, Closure $next)
+    {
+        return $next($request);
+    }
 }
