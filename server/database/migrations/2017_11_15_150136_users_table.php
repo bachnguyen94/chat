@@ -19,8 +19,8 @@ class UsersTable extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('phone');
-            $table->string('seat_id');
             $table->string('password');
+            $table->integer('role');
             $table->string('auth_token')->nullable();
             $table->string('extra_token')->nullable();
             $table->tinyInteger('status')->default(1);

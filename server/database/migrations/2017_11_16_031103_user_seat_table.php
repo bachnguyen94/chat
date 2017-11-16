@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RoomTable extends Migration
+class UserSeatTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class RoomTable extends Migration
      */
     public function up()
     {
-        Schema::create('rooms', function (Blueprint $table) {
+        Schema::create('user_seat', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->tinyInteger('status')->default(0);
+            $table->integer('seat_id');
+            $table->integer('chedule_time_id');
+            $table->integer('user_id');
+            $table->integer('status'); //trạng thái của seat: "free/pending/close" theo thời gian
             $table->timestamps();
         });
     }

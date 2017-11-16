@@ -15,11 +15,14 @@ class FilmTable extends Migration
     {
         Schema::create('films', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('category_id');
             $table->string('name');
             $table->string('title');
             $table->string('director');
             $table->string('actor');
             $table->string('trailer_link');
+            $table->string('image_url');
+            $table->string('release');
             $table->integer('time');
             $table->timestamps();
         });

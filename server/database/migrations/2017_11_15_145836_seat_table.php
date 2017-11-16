@@ -15,7 +15,9 @@ class ChairTable extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('type');
             $table->timestamps();
         });
     }

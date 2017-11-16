@@ -17,8 +17,10 @@ class ScheduleTimeTable extends Migration
             $table->increments('id');
             $table->integer('film_id');
             $table->integer('room_id');
+            $table->integer('cinema_id');
             $table->date('date');
             $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
         });
     }
